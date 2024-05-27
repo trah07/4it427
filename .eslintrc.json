@@ -6,6 +6,8 @@
     "plugin:import/errors",
     "plugin:import/recommended",
     "plugin:jsx-ally/recommend",
+    "plugin:react-hooks/recommended",
+    "plugin:tailwindcss/recommended",
     "prettier"
   ],
   // plugins tells ESLint to use additional plugins

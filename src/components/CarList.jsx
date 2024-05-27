@@ -1,13 +1,29 @@
+import { classNames } from "../utils";
 import Car from "./Car";
 
-const CarList = () => {
-    return (
-        <div>
-            <Car brand={"Toyota"} model={"Corolla"} year={2020}/>
-            <Car brand={"Fort"} model={"Mustang"} year={2019}/>
-            <Car brand={"Škoda"} model={"Fabira"} year={2018}/>
-        </div>
-    );
+const CarList = ({ cars, isLoading }) => {
+  return (
+    <div
+      className={classNames(isLoading ? "opacity-45" : "", "mt-2 grid gap-2")}
+    >
+      {!cars.length ? (
+        <h2>No Results</h2>
+      ) : (
+        cars?.map((car) => (
+          <Car
+            key={car.id}
+            id={car.id}
+            brand={car.brand}
+            model={car.model}
+            price={car.price}
+            color={car.color}
+            image={car.image}
+            location={car.location}
+          />
+        ))
+      )}
+    </div>
+  );
 };
 
-  export default CarList;
+export default CarList;
