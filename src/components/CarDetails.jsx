@@ -1,4 +1,8 @@
 const CarDetails = () => {
-    return <h1>Hi Details</h1>;
+    return (
+      <div>
+        <h1>Hi Car Details</h1>
+      </div>
+    )
   };
   export default CarDetails;

@@ -10,7 +10,7 @@ const App = () => {
       <div className="mx-auto max-w-7xl px-4">
         <div className="mx-auto max-w-3xl">
           <h2 className="py-5 text-3xl font-bold tracking-tight text-gray-900">
-            <Link to={"/"}>Velocity Vault</Link>
+            <Link to={"/"}>React App Cars</Link>
           </h2>
           <Routes>
             <Route path="/" element={<SearchParams />} />
