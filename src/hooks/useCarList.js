@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 const useCarList = ({ location, brand, model }) => {
   const [cars, setCars] = useState([]);
@@ -11,7 +11,7 @@ const useCarList = ({ location, brand, model }) => {
   async function requestCars() {
     setIsLoading(true);
     const res = await fetch(
-      `https://vse-react-basic.vercel.app/api/cars?location=${location}&brand=${brand}&model=${model}`,
+      `https://vse-react-basic.vercel.app/api/cars?location=${location}&brand=${brand}&model=${model}`
     );
     const cars = await res.json();
     setIsLoading(false);
