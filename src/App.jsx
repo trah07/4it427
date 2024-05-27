@@ -2,10 +2,16 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import SearchParams from './components/SearchParams';
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
-import CarDetails from './components/CarDetails';
-import { QueryClientProvider } from '@tanstack/react-query';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import CarDetails from './components/CarDetail/CarDetails.cont';
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: Infinity,
+    },
+  },
+});
 
 const App = () => {
   return (
@@ -14,7 +20,7 @@ const App = () => {
         <div className="mx-auto max-w-7xl px-4">
           <div className="mx-auto max-w-3xl">
             <h2 className="py-5 text-3xl font-bold tracking-tight text-gray-900">
-              <Link to={'/'}>React App Cars</Link>
+              <Link to={'/'}>Velocity Vault</Link>
             </h2>
             <Routes>
               <Route path="/" element={<SearchParams />} />

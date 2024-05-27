@@ -1,5 +1,3 @@
-import { useState, useEffect } from 'react';
-
 async function fetchModels() {
   const brand = queryKey[1];
   const res = await fetch(
