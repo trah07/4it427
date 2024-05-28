@@ -11,10 +11,7 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const links = [
-    { href: '/', label: 'Home' },
-    { href: '/docs', label: 'Docs' },
-    { href: '/todos', label: 'App' },
-    { href: '/search', label: 'Search' }
+    { href: '/', label: 'Home' }, { href: '/docs', label: 'Docs' }, { href: '/todos', label: 'App' },{ href: '/search', label: 'Search' }
   ]
 
   return (
