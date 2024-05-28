@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 import SearchParams from './components/SearchParams';
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import CarDetails from './components/CarDetail/CarDetails.cont';
+import CarDetails from './components/CarDetail/CarDetail.cont';
 
 const queryClient = new QueryClient({
   defaultOptions: {

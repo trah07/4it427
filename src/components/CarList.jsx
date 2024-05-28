@@ -6,7 +6,7 @@ const CarList = ({ cars, isLoading }) => {
     <div
       className={classNames(isLoading ? 'opacity-45' : '', 'mt-2 grid gap-2')}
     >
-      {!cars.length ? (
+      {!cars?.length && !isLoading ? (
         <h2>No Results</h2>
       ) : (
         cars?.map((car) => (

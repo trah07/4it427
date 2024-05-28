@@ -1,3 +1,5 @@
+import Carousel from '../Carousel';
+
 const DetailParam = (props) => {
   return (
     <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
@@ -25,6 +27,7 @@ const CarDetailComponent = (props) => {
         <h3 className="text-base font-semibold leading-7 text-gray-900">
           {props.car.brand.name}
         </h3>
+        <Carousel images={props.car.images} />
         <p className="mt-1 max-w-2xl text-sm leading-6 text-gray-500">
           {props.car.model.name}
         </p>
