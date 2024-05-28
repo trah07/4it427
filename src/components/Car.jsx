@@ -1,29 +1,27 @@
-import { classNames } from '../utils';
-import Car from './Car';
+import { Link } from 'react-router-dom';
 
-const CarList = ({ cars, isLoading }) => {
+const Car = (props) => {
+  const { brand, model, location, id, image, price, color } = props;
+
   return (
-    <div
-      className={classNames(isLoading ? 'opacity-45' : '', 'mt-2 grid gap-2')}
-    >
-      {!cars?.length && !isLoading ? (
-        <h2>No Results</h2>
-      ) : (
-        cars?.map((car) => (
-          <Car
-            key={car.id}
-            id={car.id}
-            brand={car.brand}
-            model={car.model}
-            price={car.price}
-            color={car.color}
-            image={car.image}
-            location={car.location}
+    <Link to={`/details/${id}`}>
+      <div className="flex w-full rounded-md border p-2 shadow-sm hover:bg-slate-100">
+        <div>
+          <img
+            src={image}
+            alt={model}
+            className="size-12 flex-none rounded-full bg-gray-50"
           />
-        ))
-      )}
-    </div>
+        </div>
+        <div className="pl-5 text-base">
+          <h1 className="text-xl">
+            {brand} {model}
+          </h1>
+          <h2>{`${color} - ${location} - ${price} CZK`}</h2>
+        </div>
+      </div>
+    </Link>
   );
 };
 
-export default CarList;
+export default Car;

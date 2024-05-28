@@ -3,6 +3,7 @@ import CarList from './CarList';
 import { keepPreviousData, useQuery } from '@tanstack/react-query';
 import fetchModelList from '../apis/fetchModelList';
 import fetchCarList from '../apis/fetchCarList';
+import SelectedCar from './SelectedCar';
 
 const brands = ['Skoda', 'Opel', 'Volkswagen', 'Toyota', 'Fiat'];
 
@@ -28,6 +29,7 @@ const SearchParams = () => {
 
   return (
     <div>
+      <SelectedCar />
       <form
         onSubmit={(e) => {
           e.preventDefault();
