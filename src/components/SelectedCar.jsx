@@ -15,7 +15,7 @@ const SelectedCar = () => {
           setSelectedCar(null);
         }}
       >
-        Clear
+        Remove car
       </button>
     </div>
   );

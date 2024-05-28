@@ -1,10 +1,10 @@
-import { useContext, useState } from 'react';
+import { Suspense, useContext, useState, lazy } from 'react';
 import Carousel from '../Carousel';
-
 import Loader from '../Loader';
-import Modal from '../Modal';
 import { SelectedCarContext } from '../../contexts/SelectedCarContext';
 import { useNavigate } from 'react-router-dom';
+
+const Modal = lazy(() => import('../Modal'));
 
 const DetailParam = (props) => {
   return (
@@ -50,30 +50,32 @@ const CarDetailComponent = (props) => {
         </dl>
       </div>
       {showModal ? (
-        <Modal>
-          <div className="w-full space-y-4">
-            <h1 className="text-xl">
-              Would you like to buy {props.car.brand.name}?
-            </h1>
-            <div className="flex w-full justify-between space-x-2">
-              <button
-                className="btn w-full bg-orange-500"
-                onClick={() => {
-                  setSelectedCar(props.car);
-                  navigate('/');
-                }}
-              >
-                Yes
-              </button>
-              <button
-                className="btn w-full"
-                onClick={() => setShowModal(false)}
-              >
-                No
-              </button>
+        <Suspense>
+          <Modal>
+            <div className="w-full space-y-4">
+              <h1 className="text-xl">
+                Would you like to buy {props.car.brand.name}?
+              </h1>
+              <div className="flex w-full justify-between space-x-2">
+                <button
+                  className="btn w-full bg-orange-500"
+                  onClick={() => {
+                    setSelectedCar(props.car);
+                    navigate('/');
+                  }}
+                >
+                  Yes
+                </button>
+                <button
+                  className="btn w-full"
+                  onClick={() => setShowModal(false)}
+                >
+                  No
+                </button>
+              </div>
             </div>
-          </div>
-        </Modal>
+          </Modal>
+        </Suspense>
       ) : null}
     </div>
   );
