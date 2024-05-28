@@ -1,12 +1,12 @@
 import content from '@/utils/content.json'
 
 export const generateStaticParams = () => {
-  return Object.keys(content).map(slug => ({
-    slug: slug.split('/')
+  return Object.keys(content).map((slug) => ({
+    slug: slug.split('/'),
   }))
 }
 
-const getData = slug => {
+const getData = (slug) => {
   const path = slug.join('/')
   return content[path] || 'coming soon'
 }

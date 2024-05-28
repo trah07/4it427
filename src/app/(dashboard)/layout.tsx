@@ -1,5 +1,5 @@
 import TodoForm from '@/components/TodoForm'
-import React from 'react';
+import React from 'react'
 
 const DashboardLayout = ({ children }) => {
   return (

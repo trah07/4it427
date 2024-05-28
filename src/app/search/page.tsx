@@ -3,7 +3,7 @@ import { getTodos } from '@/utils/actions'
 
 const SearchPage = async ({
   params,
-  searchParams
+  searchParams,
 }: {
   params: { slug: string }
   searchParams: { search?: string | null }

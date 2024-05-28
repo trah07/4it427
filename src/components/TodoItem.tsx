@@ -7,7 +7,9 @@ const TodoItem = ({ todo }: { todo: Todo }) => {
   const [, startTransition] = useTransition()
   return (
     <div className="grid grid-cols-6">
-      <div className={`text-xl mr-4 ${todo.done ? 'line-through' : ''}`}>{todo.title}</div>
+      <div className={`text-xl mr-4 ${todo.done ? 'line-through' : ''}`}>
+        {todo.title}
+      </div>
       <div>
         <button
           className="p-2 border border-gray-800 rounded-md hover:bg-slate-400 mr-2"
