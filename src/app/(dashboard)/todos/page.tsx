@@ -1,13 +1,23 @@
 import TodoList from '@/components/TodoList'
 import { getTodos } from '@/utils/actions'
 
-const TodosPage = async () => {
-  const todos = await getTodos()
+const SearchPage = async ({
+  params,
+  searchParams,
+}: {
+  params: { slug: string }
+  searchParams: { search?: string | null }
+}) => {
+  const todoName = searchParams.search
+  const todos = await getTodos(todoName)
+
   return (
     <div>
-      <TodoList todos={todos} />
+      <div>
+        <TodoList todos={todos} />
+      </div>
     </div>
   )
 }
 
-export default TodosPage
+export default SearchPage
